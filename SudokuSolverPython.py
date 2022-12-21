@@ -35,27 +35,27 @@ def possible(y,x,n) :
 	global board
 	
     # Check if n is in row
-	for i in range(0,9) :
+	for i in range(9) :
 		if board[y*9+i] == n :
 			return False
 	
     # Check if n is in column
-	for i in range(0,9) :
+	for i in range(9) :
 		if board[i*9+x] == n :
 			return False
 	
     # Check if n is in square
 	x0 = (x//3)*3
 	y0 = (y//3)*3
-	for i in range(0,3) :
-		for j in range(0,3) :
+	for i in range(3) :
+		for j in range(3) :
 			if board[y0*9+i*9+x0+j] == n :
 				return False
 	# n is not in row, column or square at this point
 	return True
 	
 def solve() :
-    global count, grid
+    global count, board
     for y in range(9) :
         for x in range(9) :
             if board[y*9+x] == 0 :
